@@ -23,30 +23,6 @@ CSS Grid & Flexbox - Modern layout techniques
 
 Material Design Icons - Beautiful icon set
 
-📁 Project Structure
-text
-portfolio-website/
-├── index.html
-├── scss/
-│   └── style.scss
-├── css/
-│   ├── normalize.css
-│   └── style.css
-├── img/
-│   ├── logo.png
-│   ├── bg.jpg
-│   ├── photo.jpg
-│   ├── work.png
-│   ├── scroll.png
-│   ├── portfolio/
-│   │   ├── work01.jpg
-│   │   ├── work02.png
-│   │   └── ...
-│   └── icons/
-│       ├── icon01.png
-│       ├── icon02.png
-│       └── ...
-└── README.md
 🎨 Sections
 Hero Section - Eye-catching header with scroll animation
 
@@ -69,3 +45,4 @@ Prerequisites
 Web browser with CSS Grid support
 
 Local server for SCSS compilation (optional)
+
