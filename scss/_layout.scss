@@ -85,7 +85,7 @@
     }
     
     &__visual,&__content {
-        flex: 1 1 calc((100% - var(--gap)) / 2);
+        flex: 1 1 calc((100% - 32px)/2);
         min-width: 0;
        
         
@@ -97,9 +97,6 @@
         position: relative;
     }
     &__content {
-        flex: 0 0 46%;
-        max-width: 46%;
-        
         @include media(960px) {
             margin-bottom: 30px;
         }
@@ -107,49 +104,56 @@
     
     &__img {
         &--back {
+            background-image:url(../img/work.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
             position: absolute;
-            z-index: -1;
-            left: 0;
-            top: -108px;
-            
+            z-index: 0;
+            inset:10% 0 0 12%;
+               transform: translate(-40%, -20%) scale(0.95);
+               transform-origin: top left;
+               pointer-events: none;
+
             @include media(960px) {
                 display: none;
             }
         }
         
         &--front {
-            @include media(960px) {
-                width: 100%;
+             position: relative;
+             z-index: 1;
+             display: block;
+             max-width: 100%;
+             height: auto;
             }
-        }
-    }
+         }
     
     &__caption {
         position: absolute;
-        left: -4px;
-        letter-spacing: 1.6px;
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-        bottom: 58px;
-        font-size:$fs-body;
+        left: -4em;
+        bottom:clamp(5px,2vw,20px);
+        display:inline-flex;
+        flex-direction: column;
+        align-items: center;     
+        gap: 0.5em; 
+        z-index: 2;
+        pointer-events: none;
+        
         
         @include media(960px) {
             display: none;
         }
-        
-        &::after {
-            content: '';
-            position: absolute;
-            display: block;
+        &-line{
             width: 1px;
-            height: 45px;
+            height: 2em;
             background-color: $dark;
-            right: 9px;
-            top: 93px;
-            
-            @include media(960px) {
-                display: none;
-            }
+        }
+        &-text{
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: $fs-body;
+            letter-spacing: 0.1em;
         }
     }
     
