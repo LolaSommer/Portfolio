@@ -1,0 +1,82 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $dark;
+}
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+.section-title {
+    font-size: clamp(25px,2.5vw,36px);
+    font-weight:$fw-regular;
+    margin-top: 0;
+    margin-bottom: 20px; 
+    &--center {
+        text-align: center;
+    }
+}
+.section-subtitle {
+     font-size: clamp(14px, 1vw, 16px);
+    color: $text;
+    text-align: center;
+}
+.cta-banner {
+    padding-top: 72px;
+    padding-bottom: 113px;
+    background-color: $dark;
+    color: #fff;
+    text-align: center;
+    
+    &__subtitle {
+        font-size: 22px;
+        margin-bottom: 0;
+        
+        @include media(650px) {
+            font-size: 14px;
+        }
+    }
+    
+    &__title {
+        font-size: 48px;
+        margin-top: 15px;
+        margin-bottom: 42px;
+        
+        @include media(650px) {
+            font-size: 25px;
+        }
+    }
+}
+.contact {
+    padding-top: 122px;
+    padding-bottom: 130px;
+}

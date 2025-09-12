@@ -1,0 +1,66 @@
+.nav {
+    @include media(850px) {
+        display: none;
+    }
+    
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+    }
+    
+    &__item {
+        margin-left: 23px;
+    }
+    
+    &__link {
+        color: $dark;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 6px;
+        transition: 0.3s;
+        
+        &:hover {
+            border-bottom: 1px solid $dark;
+        }
+    }
+}
+.logo__img {
+  width: clamp(100px, 20vw, 135px);
+  height: auto;
+}
+@keyframes move {
+    0% { 
+        transform: translate(0, -10px); 
+        opacity: 0;
+    }
+    50% { 
+        opacity: 1; 
+    }
+    100% {
+        transform: translate(0, 10px); 
+        opacity: 0;
+    }
+}
+.btn {
+    color: #fff;
+    background-color: $dark;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 20px 0;
+    border: none;
+    display: inline-block;
+    
+    &--center {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.cta-banner .btn {
+    color: $dark;
+    background-color: #fff;
+    padding: 12px 57px;
+}
