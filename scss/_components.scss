@@ -1,24 +1,22 @@
 .nav {
+    margin-left:auto;
     @include media(850px) {
         display: none;
     }
     
     &__list {
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0;
-        display: flex;
+        display:flex;
+        gap:1.5em; 
+        padding:0;
+        margin:0;
+        list-style:none;
+        justify-content: flex-end;
     }
-    
-    &__item {
-        margin-left: 23px;
-    }
-    
     &__link {
         color: $dark;
         text-decoration: none;
         border-bottom: 1px solid transparent;
-        padding-bottom: 6px;
+        padding-bottom:0.375em;
         transition: 0.3s;
         
         &:hover {
@@ -30,37 +28,39 @@
   width: clamp(100px, 20vw, 135px);
   height: auto;
 }
-@keyframes move {
-    0% { 
-        transform: translate(0, -10px); 
-        opacity: 0;
-    }
-    50% { 
-        opacity: 1; 
-    }
-    100% {
-        transform: translate(0, 10px); 
-        opacity: 0;
-    }
-}
-.btn {
-    color: #fff;
-    background-color: $dark;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 20px 0;
-    border: none;
-    display: inline-block;
-    
-    &--center {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
-}
 
-.cta-banner .btn {
-    color: $dark;
-    background-color: #fff;
-    padding: 12px 57px;
+.btn {
+  display: inline-flex;         
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  box-sizing: border-box;
+  font: inherit;              
+  line-height: 1;               
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: $dark;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding-block: 0.75em;       
+  padding-inline: 1.25em;     
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn--primary {
+  background-color: $dark;
+  color: #fff;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}
+.btn--secondary {
+  background-color: #fff;
+  color: $dark;
+  border-color: $dark;
+  &:hover {
+    background-color: $dark;
+    color: #fff;
+  }
 }

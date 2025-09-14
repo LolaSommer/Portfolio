@@ -94,17 +94,6 @@
         justify-content: flex-start;
         gap:1.5rem;
     }
-    .nav { 
-        margin-left:auto; 
-    }
-    .nav__list { 
-        display:flex;
-         gap:1.5em; 
-         padding:0;
-          margin:0;
-           list-style:none;
-           justify-content: flex-end;
-         }
 }
 .about {
     padding-top:clamp(100px,10vw,240px);

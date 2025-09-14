@@ -3,7 +3,10 @@
 
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #22222b;
+  line-height: 1.5; }
 
 ul, ol {
   margin: 0;
@@ -18,24 +21,19 @@ img, video {
 button, input, textarea, select {
   font: inherit; }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #22222b; }
-
 .text-center {
   text-align: center; }
 
 .container {
   max-width: 1170px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-inline: clamp(10px, 1vw, 15px);
   margin: 0 auto; }
 
 .section-title {
   font-size: clamp(25px, 2.5vw, 36px);
   font-weight: 400;
   margin-top: 0;
-  margin-bottom: 20px; }
+  margin-bottom: clamp(1rem, 2vw, 2rem); }
   .section-title--center {
     text-align: center; }
 
@@ -45,28 +43,19 @@ body {
   text-align: center; }
 
 .cta-banner {
-  padding-top: 72px;
-  padding-bottom: 113px;
+  padding-block: clamp(2.5rem, 6vw, 6rem) clamp(3rem, 6vw, 7rem);
   background-color: #22222b;
   color: #fff;
   text-align: center; }
   .cta-banner__subtitle {
-    font-size: 22px;
+    font-size: clamp(14px, 2vw, 22px);
     margin-bottom: 0; }
-    @media (max-width: 650px) {
-      .cta-banner__subtitle {
-        font-size: 14px; } }
   .cta-banner__title {
-    font-size: 48px;
-    margin-top: 15px;
-    margin-bottom: 42px; }
-    @media (max-width: 650px) {
-      .cta-banner__title {
-        font-size: 25px; } }
+    font-size: clamp(25px, 2vw, 48px);
+    margin-block: 0.938em 2.625em; }
 
 .contact {
-  padding-top: 122px;
-  padding-bottom: 130px; }
+  padding-block: clamp(4rem, 6vw, 7.5rem); }
 
 .visually-hidden {
   position: absolute !important;
@@ -181,15 +170,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     gap: 1.5rem; }
-  .header .nav {
-    margin-left: auto; }
-  .header .nav__list {
-    display: flex;
-    gap: 1.5em;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    justify-content: flex-end; }
 
 .about {
   padding-top: clamp(100px, 10vw, 240px);
@@ -553,54 +533,61 @@ body {
       outline: 2px solid #fff;
       outline-offset: 2px; }
 
-@media (max-width: 850px) {
-  .nav {
-    display: none; } }
-.nav__list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-  display: flex; }
-.nav__item {
-  margin-left: 23px; }
-.nav__link {
-  color: #22222b;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 6px;
-  transition: 0.3s; }
-  .nav__link:hover {
-    border-bottom: 1px solid #22222b; }
+.nav {
+  margin-left: auto; }
+  @media (max-width: 850px) {
+    .nav {
+      display: none; } }
+  .nav__list {
+    display: flex;
+    gap: 1.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: flex-end; }
+  .nav__link {
+    color: #22222b;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.375em;
+    transition: 0.3s; }
+    .nav__link:hover {
+      border-bottom: 1px solid #22222b; }
 
 .logo__img {
   width: clamp(100px, 20vw, 135px);
   height: auto; }
 
-@keyframes move {
-  0% {
-    transform: translate(0, -10px);
-    opacity: 0; }
-  50% {
-    opacity: 1; }
-  100% {
-    transform: translate(0, 10px);
-    opacity: 0; } }
 .btn {
-  color: #fff;
-  background-color: #22222b;
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  box-sizing: border-box;
+  font: inherit;
+  line-height: 1;
   text-decoration: none;
-  padding: 20px 0;
-  border: none;
-  display: inline-block; }
-  .btn--center {
-    display: block;
-    margin: 0 auto;
-    text-align: center; }
+  cursor: pointer;
+  user-select: none;
+  background-color: #22222b;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding-block: 0.75em;
+  padding-inline: 1.25em;
+  transition: background-color 0.3s, color 0.3s; }
 
-.cta-banner .btn {
-  color: #22222b;
+.btn--primary {
+  background-color: #22222b;
+  color: #fff; }
+  .btn--primary:hover {
+    filter: brightness(1.05); }
+
+.btn--secondary {
   background-color: #fff;
-  padding: 12px 57px; }
+  color: #22222b;
+  border-color: #22222b; }
+  .btn--secondary:hover {
+    background-color: #22222b;
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
