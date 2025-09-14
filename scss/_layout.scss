@@ -429,79 +429,47 @@
     }
 }
 .stats {
-    padding-block: 6.25em 5.125em;
+    padding-block: clamp(80px, 8vw, 100px) clamp(56px, 6vw, 82px);
     background-color: $light;
     
     &__grid {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         text-align: center;
+        gap: clamp(16px, 4vw, 48px);
         flex-wrap: wrap;
     }
 }
 
 .stat {
-    @include media(850px) {
-        flex-basis: 50%;
-        max-width: 50%;
-        margin-bottom: 30px;
-    }
+    flex:1 1 220px;
     
-    @include media(650px) {
-        flex-basis: 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    &__icon {
-        background-color: $dark;
-        width: 70px;
-        height: 70px;
-        border-radius: 100%;
-        margin: 0 auto;
-        background-position: center center;
-        background-repeat: no-repeat;
-        margin-bottom: 27px;
-        
-        &--clients {
-            background-image: url(../img/heart.png);
-            background-size: 26px 23px;
-        }
-        
-        &--projects {
-            background-image: url(../img/project.png);
-            background-size: 26px 23px;
-        }
-        
-        &--experience {
-            background-image: url(../img/experience.png);
-            background-size: 26px 24px;
-        }
-        
-        &--awards {
-            background-image: url(../img/awards.png);
-            background-size: 19px 23px;
-        }
-    }
-    
-    &__count {
-        font-size: 22px;
-        font-weight: 500;
-        margin-bottom: 13px;
-        
-        @include media(650px) {
-            font-size: 18px;
-        }
-    }
-    
-    &__label {
-        font-size: 16px;
-        text-transform: uppercase;
-        
-        @include media(650px) {
-            font-size: 14px;
-        }
-    }
+  &__icon {
+    inline-size: clamp(56px, 7vw, 70px);
+    block-size: clamp(56px, 7vw, 70px);
+    border-radius: 50%;
+    margin: 0 auto clamp(14px, 2vw, 27px);
+    background-color: $dark;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--clients   { background-image: url(../img/heart.png);      background-size: 26px 23px; }
+    &--projects  { background-image: url(../img/project.png);    background-size: 26px 23px; }
+    &--experience{ background-image: url(../img/experience.png); background-size: 26px 24px; }
+    &--awards    { background-image: url(../img/awards.png);     background-size: 19px 23px; }
+  }
+
+  &__count {
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight:$fw-medium;
+    margin-block-end: clamp(8px, 1.5vw, 13px);
+  }
+
+  &__label {
+    font-size: clamp(12px, 1.6vw, 16px);
+    text-transform: uppercase;
+    letter-spacing: 0.06em; 
+  }
 }
 .contact-form {
     display: flex;
@@ -512,10 +480,10 @@
     &__input, &__textarea {
         border: none;
         border-bottom: 1px solid #e1e1e1;
-        font-size: 14px;
-        padding: 17px 25px;
+        font-size:$fs-min;
+        padding-block:1.063em 1.563em;
         text-align: center;
-        margin-bottom: 15px;
+        margin-bottom:clamp(10px,2vw,15px);
         transition: 0.3s;
         box-sizing: border-box;
         
@@ -526,38 +494,36 @@
     }
     
     &__textarea {
-        padding: 12px 25px;
-        min-height: 86px;
-        margin-bottom: 35px;
+        padding-block: 0.75em 1.563em;
+        min-height:clamp(60px, 15vw, 120px);
+        margin-block-end: clamp(12px, 2vw, 35px);
     }
 }
 .footer {
     background-color: $dark;
-    padding-top: 64px;
-    padding-bottom: 69px;
+    padding-block: clamp(48px, 6vw, 64px) clamp(56px, 7vw, 69px);
     
     &__inner {
         display: flex;
-        justify-content: space-between;
+        justify-content:space-between;
         align-items: center;
         color: #fff;
-        font-size: 16px;
+        font-size:clamp(14px,1vw,16px);
         
         @include media(650px) {
             flex-direction: column;
+            gap: clamp(12px, 3vw, 20px);
             text-align: center;
-            font-size: 14px;
         }
     }
     
     &__copyright {
         @include media(650px) {
-            margin-bottom: 20px;
+            margin-bottom:clamp(12px,2vw,20px);
         }
     }
 }
 
-// Social
 .social {
     display: flex;
     list-style-type: none;
@@ -569,11 +535,23 @@
     }
     
     &__item {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-inline:clamp(12px,2vw,20px);
     }
     
     &__link {
-        color: #fff;
+       display: flex;
+       inline-size: 44px;
+       block-size: 44px;
+       align-items: center;
+       justify-content: center;
+       color: #fff;
+       text-decoration: none;
+       &:hover {
+        opacity:.85;
+       }
+       &:focus-visible {
+       outline: 2px solid #fff;
+       outline-offset: 2px;
     }
+}
 }
